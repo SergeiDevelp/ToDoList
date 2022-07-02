@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CategoriesComponent } from './views/categories/categories.component';
+import {CategoriesComponent} from './views/categories/categories.component';
+import {TaskComponent} from './views/task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule
