@@ -9,14 +9,14 @@ import {Task} from "../../model/Task";
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-  task: Task[] | undefined;
+  tasks: Task[] | undefined;
 
   constructor(private dataHandler: DataHandlerService) {
 
   }
 
   ngOnInit(): void {
-    this.task = this.dataHandler.getTask();
+    this.dataHandler.tasksSubject.subscribe(tasks => this.tasks = tasks);
   }
 
 }

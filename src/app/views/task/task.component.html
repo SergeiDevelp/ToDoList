@@ -15,13 +15,13 @@
       <th>Дата</th>
       </thead>
       <tbody>
-      <tr *ngFor="let tasks of task">
-        <td>{{tasks.id}}</td>
-        <td>{{tasks.title}}</td>
-        <td>{{tasks.category}}</td>
-        <td>{{tasks.priority}}</td>
-        <td>{{tasks.completed}}</td>
-        <td>{{tasks.date}}</td>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.id}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.category}}</td>
+        <td>{{task.priority}}</td>
+        <td>{{task.completed}}</td>
+        <td>{{task.date}}</td>
       </tr>
       <!--        <tr>-->
       <!--          <td>2</td>-->
