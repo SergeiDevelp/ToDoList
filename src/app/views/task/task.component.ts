@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataHandlerService} from "../../service/data-handler.service";
 import {Task} from "../../model/Task";
+import {Category} from "../../model/Category";
 
 
 @Component({
@@ -17,6 +18,10 @@ export class TaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataHandler.tasksSubject.subscribe(tasks => this.tasks = tasks);
+  }
+
+  showTasksByTasks() {
+    this.dataHandler.fillTasks();
   }
 
 }
