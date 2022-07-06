@@ -1,7 +1,7 @@
 <!--<div class="col-lg-6 col-md-12">-->
 <div class="card">
   <div class="card-header card-header-warning">
-    <h4 (click)="showTasksByTasks()" class="card-title ">List Tasks</h4>
+    <h4 (click)="showTasksByTasks()" class="card-title pointer">List Tasks</h4>
     <p class="card-category">I do it. Don't worry, be happy!</p>
   </div>
   <div class="card-body table-responsive">
@@ -11,17 +11,27 @@
       <th>Название</th>
       <th>Категория</th>
       <th>Приоритет</th>
-      <th>Статус</th>
       <th>Дата</th>
+      <th>Статус</th>
       </thead>
       <tbody>
-      <tr *ngFor="let task of tasks">
-        <td>{{task.id}}</td>
+      <tr *ngFor="let task of tasks; let i = index">
+        <td>{{i + 1}}</td>
         <td>{{task.title}}</td>
-        <td>{{task.category}}</td>
-        <td>{{task.priority}}</td>
-        <td>{{task.completed}}</td>
-        <td>{{task.date}}</td>
+        <td>{{task.category != null ? task.category.title : 'Без категории'}}</td>
+        <td>{{task.priority != null ? task.priority.title : 'Без приоритета'}}</td>
+        <td>{{task.date != null ? (task.date | date: 'short') : 'Без даты'}}</td>
+        <td>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input [checked]="task.completed == true" checked class="form-check-input" type="checkbox" value="">
+              <span class="form-check-sign">
+              <span class="check"></span>
+              </span>
+
+            </label>
+          </div>
+        </td>
       </tr>
       <!--        <tr>-->
       <!--          <td>2</td>-->
